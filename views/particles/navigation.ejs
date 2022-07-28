@@ -1,0 +1,26 @@
+
+<div class="header">
+    
+
+
+    <div class="header-menu">
+     <a class="menu-link notify" id="tovar" href="#">Товары</a>
+     <a class="menu-link is-active" href="/">Главная</a>     
+     <a class="menu-link" href="/basket">Корзина</a>
+     <a class="menu-link notify" href="/add">Добавить</a>
+    </div>
+   
+    <% if (auth) { %>
+    <div class="header-profile"> 
+        
+    
+    </div>
+    
+    
+    <a class="menu-link" href="/logout">Выйти</a>  
+    <% } else { %>
+    <div class="header-profile">     
+     <a class="menu-link" href="/auth">Войти</a> 
+    </div>
+    <% } %>
+   </div>

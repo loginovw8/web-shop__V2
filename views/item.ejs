@@ -1,0 +1,150 @@
+<%- include('particles/header.ejs') %>
+<body>
+  <div class="video-bg">
+   
+   </div>
+   <div class="dark-light">
+       <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+      </div>
+   <div class="app">
+    <%- include('particles/navigation.ejs') %>
+    
+    <div class="adobe-product_item">
+        <h2 class="section__title">
+            <div class="product_item">
+           
+                <%= item.title  %>
+              </div>
+        </h2>
+         <img class="section__image" src="/img/<%= item.image %>">
+          
+        <div class="product_item__price">
+            <%= item.price %>&nbsp;₽
+        </div>
+        
+
+    </div>
+    <div class="product_item_description">
+            <%= item.description %>
+        </div>
+    <div class="product_update">
+        <form action="/update" method="post">
+            <div class="form-group">
+                <label class="form-group__label" for="title">title</label>
+                <input value="<%= item.title %>" class="form-group__input" type="text" id="title" name="title"
+                    placeholder="title">
+            </div>
+
+            <div class="form-group">
+                <label class="form-group__label" for="image">description</label>
+                <input value="<%= item.description %>" class="form-group__input" type="text" id="descreption"
+                    name="description" placeholder="description">
+            </div>
+            <div class="form-group">
+                <label class="form-group__label" for="image">price</label>
+                <input value="<%= item.price %>" class="form-group__input" type="text" id="price" name="price"
+                    placeholder="price">
+            </div>
+            <div class="form-group">
+                <label class="form-group__label" for="image">image</label>
+                <input value="<%= item.image %>" class="form-group__input" type="text" id="image" name="image"
+                    placeholder="image">
+            </div>
+            
+            
+
+
+            <div class="product_radio"> Gender
+                <div class="radio__3">
+                  <input id="radio-3" type="radio"  name="radio_gender" value="uni" >
+                  <label for="radio-3"></label>uni
+                </div>
+
+
+
+                <div class="radio__1">
+                  <input id="radio-1" type="radio"  name="radio_gender" value="man">
+                  <label for="radio-1"></label>man
+                </div>
+                
+                
+                <div class="radio__2">
+                  <input id="radio-2" type="radio" name="radio_gender" value="woman" >
+                  <label for="radio-2"></label> woman
+                </div>
+
+                
+            </div>   
+            <div class="product_radio"> Type
+              <div class="radio__1">
+                <input id="radio1" type="radio"  name="radio_type" value="cap">
+                <label for="radio1"></label>Cap
+              </div>
+              
+              
+              <div class="radio__2">
+                <input id="radio2" type="radio" name="radio_type" value="hat" >
+                <label for="radio2"></label> Hat
+              </div>
+
+              <div class="radio__3">
+                <input id="radio3" type="radio"  name="radio_type" value="jacket">
+                <label for="radio3"></label>Jacket
+              </div>
+
+              <div class="radio__4">
+                <input id="radio4" type="radio"  name="radio_type" value="t-shirt">
+                <label for="radio4"></label>T-shirt
+              </div>
+
+              <div class="radio__5">
+                <input id="radio5" type="radio"  name="radio_type" value="hoodies">
+                <label for="radio5"></label>Hoodies
+              </div>
+
+              <div class="radio__6">
+                <input id="radio6" type="radio"  name="radio_type" value="pants">
+                <label for="radio6"></label>Pants
+              </div>
+
+              <div class="radio__7">
+                <input id="radio7" type="radio"  name="radio_type" value="jeans">
+                <label for="radio7"></label>Jeans
+              </div>
+
+              <div class="radio__8">
+                <input id="radio8" type="radio"  name="radio_type" value="shorts">
+                <label for="radio8"></label>Shorts
+              </div>
+
+              <div class="radio__9">
+                <input id="radio9" type="radio"  name="radio_type" value="cross">
+                <label for="radio9"></label>cross
+              </div>
+
+              <div class="radio__10">
+                <input id="radio10" type="radio"  name="radio_type" value="sneakers">
+                <label for="radio10"></label>Sneakers
+              </div>
+
+              <div class="radio__11">
+                <input id="radio11" type="radio"  name="radio_type" value="sandals">
+                <label for="radio11"></label>sandals
+              </div>
+
+             
+
+           
+          </div>
+              
+            <input value="<%= item.id%>" type="hidden" name="id">
+            <input class="content-button" type="submit" value="Обновить">
+                     
+        </form>
+        <form action="/delete" method="post">
+            <input value="<%= item.id%>" type="hidden" name="id">
+            <input class="del_button_item" type="submit" value="Удалить">
+
+        </form>
+        <%- include('particles/footer.ejs') %>

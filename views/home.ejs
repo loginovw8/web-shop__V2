@@ -1,0 +1,125 @@
+<%- include('particles/header.ejs') %>
+<body>
+  
+   
+   <div class="dark-light">
+       <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+      </div>
+   <div class="app">
+    <%- include('particles/navigation.ejs') %>
+    <div class="wrapper">
+      <div class="left-side" id="elem">
+        <div class="side-wrapper">
+         <div class="side-title">Головные уборы</div>
+         <div class="side-menu">
+          <a href="/hat">
+           
+           Шапки
+          </a>
+          <a href="/cap">
+           
+           Кепки
+           
+          </a>
+         </div>
+        </div>
+        <div class="side-wrapper">
+         <div class="side-title">Верх</div>
+         <div class="side-menu">
+          <a href="/jacket">
+          
+           Куртки
+          </a>
+          <a href="/t-shirt">
+           
+           Футбоки
+          </a>
+          
+          <a href="/hoodi">
+           
+           Худи
+          </a>
+         
+         </div>
+        </div>
+        <div class="side-wrapper">
+         <div class="side-title">Низ</div>
+         <div class="side-menu">
+          <a href="/pants">
+           
+           Штаны
+          </a>
+
+          <a href="/jeans">
+           
+            Джинсы
+           </a>
+
+           <a href="/shorts">
+           
+            Шорты
+           </a>
+
+
+         </div>
+        </div>
+        <div class="side-wrapper">
+         <div class="side-title">Обувь</div>
+         <div class="side-menu">
+          <a href="/cross">
+           
+           Кросовки
+          </a>
+          <a href="/sneakers">
+           
+           Кеды
+          </a>
+          <a href="/sandals">
+           
+           Босоножки
+          </a>         
+         </div>
+        </div>
+        </div>
+  
+     <div class="main-container">
+      
+      <div class="content-wrapper">
+       
+       <div class="content-section">
+        
+        <% for (let i=0; i < items.length; i++) { %>
+        <ul>
+          <a href="/items/<%= items[i].id %>">      
+         <li class="adobe-product">
+          
+          <div class="products">
+            <img class="section__image" src="img/<%= items[i].image %>">
+           <div class="title"> <%= items[i].title  %></div>
+           
+          </div>
+   
+          <span class="status">
+           
+           <%= items[i].price %>&nbsp;₽</span>
+          <div class="button-wrapper">
+            <form action="/buy" method="post">
+              <input class="content-button status-button" type="submit" class="buy-button" value="Купить">
+              <input value="<%= items[i].id%>" type="hidden" name="id">
+            </form>
+          
+           
+           <div class="menu">
+          
+         </li>
+         
+        </ul>
+      </a>  
+        <% } %>
+       </div>
+       <div class="content-section">
+      
+    </div>
+    <div class="overlay-app"></div>
+    <%- include('particles/footer.ejs') %>
